@@ -18,6 +18,7 @@ COPY --from=build /app/package.json .
 
 RUN npm install
 
+COPY .env ./
 COPY --from=build /app/dist ./dist
 
 CMD [ "npm", "start" ]
