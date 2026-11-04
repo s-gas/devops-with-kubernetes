@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rand-hex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rand-hex
+  template:
+    metadata:
+      labels:
+        app: rand-hex
+    spec:
+      containers:
+        - name: rand-hex
+          image: sgasparini/rand-hex:1.0.0
