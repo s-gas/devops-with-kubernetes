@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: sgasparini/todo-app:1.0.0
+          image: sgasparini/todo-app:1.0.1
