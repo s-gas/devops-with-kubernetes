@@ -1,9 +1,24 @@
-FROM alpine:3.23
+FROM node:26-bookworm-slim AS build
 
-RUN apk add openssl bash
+WORKDIR /app
 
-WORKDIR /script
+COPY package.json ./
+RUN npm install
 
-COPY ./rand_hex.sh .
+COPY .env tsconfig.json ./
+COPY src ./src
 
-CMD [ "./rand_hex.sh" ]
+RUN npm run build
+
+FROM node:26-bookworm-slim
+
+WORKDIR /app
+
+COPY --from=build /app/package.json .
+
+RUN npm install
+
+COPY .env ./
+COPY --from=build /app/dist ./dist
+
+CMD [ "npm", "start" ]
