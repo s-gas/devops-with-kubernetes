@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rand-hex-ing
+  name: log-output-ing
 spec:
   rules:
   - http:
@@ -13,3 +13,10 @@ spec:
             name: rand-hex-svc
             port:
               number: 1234 # This need to match the port defined in the service manifest
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: ping-pong-svc
+            port:
+              number: 1234
