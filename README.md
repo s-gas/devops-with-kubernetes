@@ -14,3 +14,4 @@ My solutions for the University of Helsinki's DevOps with Kubernetes course.
 - [1.6.](https://github.com/s-gas/devops-with-kubernetes/tree/1.6/the_project)
 - [1.7.](https://github.com/s-gas/devops-with-kubernetes/tree/1.7/log_output)
 - [1.8.](https://github.com/s-gas/devops-with-kubernetes/tree/1.8/the_project)
+- [1.9.](https://github.com/s-gas/devops-with-kubernetes/tree/1.9/log_output)
